@@ -4,17 +4,15 @@ import { LocationIcon, HotelIcon, SadSmileIcon } from '../../utils/icons';
 interface SuggestionProps {
   placeSuggestions: any;
   inputValue: string;
-  setInputValue: (arg0: any) => any;
   lodgignSuggestions: any;
 }
 
 const openNewTab = (suggestion: any) => {
-  console.log(suggestion)
-  const newTab = window.open('/details?'+suggestion.place_id, '_blank');
+  const newTab = window.open('/details?' + suggestion.place_id, '_blank');
   newTab?.focus();
 };
 
-const SuggestionCard: React.FC<SuggestionProps> = ({ placeSuggestions, inputValue, setInputValue, lodgignSuggestions }) => {
+const SuggestionCard: React.FC<SuggestionProps> = ({ placeSuggestions, inputValue, lodgignSuggestions }) => {
   return (
     <div className="suggestions">
       {placeSuggestions.length ? <div key={"Location"} className="suggestionHeader">Locations</div> :

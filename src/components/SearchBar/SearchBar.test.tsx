@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, fireEvent, screen, getByText, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, fireEvent, screen  } from '@testing-library/react';
 import SearchBar from './SearchBar';
-import { getLocalitySuggestions } from '../../utils/api';
 
 test('renders SearchBar component', () => {
     render(<SearchBar />);

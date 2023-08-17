@@ -9,7 +9,6 @@ const DetailPage = () => {
     const [placeDetails, setPlaceDetails] = useState<Detail | null>(null)
     useEffect(() => {
         getDetails(window.location.search).then((value: any) => {
-            console.log(value)
             setPlaceDetails(value)
         })
     }, []);
@@ -24,14 +23,14 @@ const DetailPage = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col" id="Photodiv">
-                                {placeDetails.photos.map((photo: any, index: any) => (
+                                {placeDetails.photos ? placeDetails.photos.map((photo: any, index: any) => (
                                     <img
                                         key={index}
                                         src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo.photo_reference}&key=${API_KEY}`}
                                         alt={`Photo ${index + 1}`}
                                         style={{ margin: '10px', maxWidth: '25%' }}
                                     />
-                                ))}
+                                )) : <></>}
                             </div>
                             <div className="col" id="Detaildev">
                                 <h2><b>{placeDetails.name}</b></h2>
@@ -58,7 +57,7 @@ const DetailPage = () => {
                 </div>
             )}
 
-            {!placeDetails ? <h1>Incorrect Place id</h1> : <></>}
+            {!placeDetails ? <h1>Loading.....</h1> : <></>}
         </div>
     )
 }

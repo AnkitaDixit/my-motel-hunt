@@ -23,7 +23,6 @@ const SearchBar: React.FC = () => {
       const getLodging = getLodgingSuggestions({ input: newValue })
       Promise.all([getLocality, getLodging])
         .then((data: any[]) => {
-          console.log(data)
           setPlaceSuggestions(data[0])
           setLodgignSuggestions(data[1])
         })
@@ -37,23 +36,22 @@ const SearchBar: React.FC = () => {
   return (
     <div className="Searchcontainer">
       <h1 className="title">Book your motel</h1>
-    <div className="input-card-dropdown">
-          <div className="input-wrapper">
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="Search hotels..."
-              className="search-input"
-            />
-          </div>
-          <SuggestionCard 
+      <div className="input-card-dropdown">
+        <div className="input-wrapper">
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Search hotels..."
+            className="search-input"
+          />
+        </div>
+        <SuggestionCard
           placeSuggestions={placeSuggestions}
           inputValue={inputValue}
-          setInputValue={setInputValue}
           lodgignSuggestions={lodgignSuggestions}
-          />
-    </div>
+        />
+      </div>
     </div>
   );
 };

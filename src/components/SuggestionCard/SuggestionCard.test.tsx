@@ -7,7 +7,6 @@ test('renders SuggestionCard component', () => {
     <SuggestionCard
       placeSuggestions={[]}
       inputValue=""
-      setInputValue={() => {}}
       lodgignSuggestions={[]}
     />
   );
@@ -23,7 +22,6 @@ test('displays location suggestions', () => {
       <SuggestionCard
         placeSuggestions={placeSuggestions}
         inputValue="New York"
-        setInputValue={() => {}}
         lodgignSuggestions={[]}
       />
     );
@@ -42,7 +40,6 @@ test('displays location suggestions', () => {
       <SuggestionCard
         placeSuggestions={[]}
         inputValue="Hotel"
-        setInputValue={() => {}}
         lodgignSuggestions={lodgignSuggestions}
       />
     );
@@ -63,7 +60,6 @@ test('displays location suggestions', () => {
       <SuggestionCard
         placeSuggestions={placeSuggestions}
         inputValue="New York"
-        setInputValue={() => {}}
         lodgignSuggestions={[]}
       />
     );
